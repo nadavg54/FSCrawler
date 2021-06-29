@@ -35,20 +35,20 @@ public class FileNamesRetriever implements IFolderTextFilesNamesRetriever {
     }
 
 
+
     private void getFiles(){
         File dir = new File(dirName);
         textFiles = new ArrayList<>();
         folders = new ArrayList<>();
+
         File[] files = dir.listFiles();
-        for(File file:files){
+        for(File file:files) {
             String name = file.getName();
-            if(file.isDirectory()){
-                folders.add(name);
-            }
-            else{
-                textFiles.add(name);
+            if (file.isDirectory()) {
+                folders.add(dir.getAbsolutePath() + "/" + name);
+            } else {
+                textFiles.add(dir.getAbsolutePath() + "/" + name);
             }
         }
-
     }
 }

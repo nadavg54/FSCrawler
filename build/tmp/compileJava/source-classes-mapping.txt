@@ -1,0 +1,38 @@
+abstraction/ITreeCrawler.java
+ abstraction.ITreeCrawler
+main/App.java
+ main.App
+imp/FileSource.java
+ imp.FileSource
+abstraction/ITree.java
+ abstraction.ITree
+abstraction/IFolderSearcher.java
+ abstraction.IFolderSearcher
+imp/matchers/BasicLineMatcher.java
+ imp.matchers.BasicLineMatcher
+imp/FileNamesRetriever.java
+ imp.FileNamesRetriever
+imp/worker/FileNameWorker.java
+ imp.worker.FileNameWorker
+abstraction/linesource/ILineSource.java
+ abstraction.linesource.ILineSource
+abstraction/matchers/ILineMatcher.java
+ abstraction.matchers.ILineMatcher
+imp/DirectoryTree.java
+ imp.DirectoryTree
+imp/FileCrawler.java
+ imp.FileCrawler
+imp/worker/RequestData.java
+ imp.worker.RequestData
+imp/matchers/MultiLineSourceMatcher.java
+ imp.matchers.MultiLineSourceMatcher
+abstraction/IFolderTextFilesNamesRetriever.java
+ abstraction.IFolderTextFilesNamesRetriever
+imp/worker/FileMatcherTask.java
+ imp.worker.FileMatcherTask
+abstraction/matchers/IMultiLinesMatcher.java
+ abstraction.matchers.IMultiLinesMatcher
+imp/TreeCrawler.java
+ imp.TreeCrawler
+imp/matchers/FileMatcher.java
+ imp.matchers.FileMatcher
