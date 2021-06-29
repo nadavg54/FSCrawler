@@ -24,9 +24,9 @@ public class App {
             Map<String,Boolean> backingMap = new ConcurrentHashMap<>();
             Set<String> res = Collections.newSetFromMap(backingMap);
             TreeCrawler treeCrawler = new TreeCrawler();
-            DirectoryTree directoryTree = new DirectoryTree(HOME_DIR + "/junk/redis");
+            DirectoryTree directoryTree = new DirectoryTree(HOME_DIR + "/junk/elasticsearch");
             BlockingQueue<Runnable> tasks = new LinkedBlockingQueue<>();
-            ExecutorService executorService = new ThreadPoolExecutor(1,1,0,TimeUnit.MILLISECONDS,tasks);
+            ExecutorService executorService = new ThreadPoolExecutor(8,8,0,TimeUnit.MILLISECONDS,tasks);
             treeCrawler.crawl(directoryTree,new FileNameWorker(executorService,"retries",res));
             executorService.shutdown();
             executorService.awaitTermination(60, TimeUnit.SECONDS);
