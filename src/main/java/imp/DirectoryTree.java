@@ -1,6 +1,7 @@
 package imp;
 
 import abstraction.ITree;
+import org.apache.log4j.Logger;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.util.List;
 public class DirectoryTree implements ITree, Closeable {
 
     private String rootDir;
+    final static Logger logger = Logger.getLogger(DirectoryTree.class);
 
     private FileNamesRetriever fileNamesRetriever;
 
@@ -24,6 +26,7 @@ public class DirectoryTree implements ITree, Closeable {
     public List<ITree> getChildren() throws IOException {
         List<ITree> res = new ArrayList<>();
         Collection<String> dirs = fileNamesRetriever.getDirs();
+        logger.info("dirs " + dirs);
         for(String dir:dirs){
             res.add(new DirectoryTree(dir));
         }
@@ -32,6 +35,7 @@ public class DirectoryTree implements ITree, Closeable {
 
     @Override
     public Object getVal() throws Exception{
+
         return fileNamesRetriever.getTextFiles();
     }
 

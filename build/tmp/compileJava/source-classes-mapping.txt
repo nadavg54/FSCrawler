@@ -1,7 +1,5 @@
 abstraction/ITreeCrawler.java
  abstraction.ITreeCrawler
-main/App.java
- main.App
 imp/FileSource.java
  imp.FileSource
 abstraction/ITree.java
@@ -18,10 +16,10 @@ abstraction/linesource/ILineSource.java
  abstraction.linesource.ILineSource
 abstraction/matchers/ILineMatcher.java
  abstraction.matchers.ILineMatcher
+app/App.java
+ app.App
 imp/DirectoryTree.java
  imp.DirectoryTree
-imp/FileCrawler.java
- imp.FileCrawler
 imp/worker/RequestData.java
  imp.worker.RequestData
 imp/matchers/MultiLineSourceMatcher.java

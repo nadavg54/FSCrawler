@@ -1,6 +1,7 @@
 package imp;
 
 import abstraction.IFolderTextFilesNamesRetriever;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class FileNamesRetriever implements IFolderTextFilesNamesRetriever {
     private String dirName;
     private List<String> textFiles;
     private List<String> folders;
+    final static Logger logger = Logger.getLogger(FileNamesRetriever.class);
 
     public FileNamesRetriever(String dirName) {
         this.dirName = dirName;
@@ -31,6 +33,7 @@ public class FileNamesRetriever implements IFolderTextFilesNamesRetriever {
         if(folders == null){
             getFiles();
         }
+
         return folders;
     }
 
@@ -50,5 +53,7 @@ public class FileNamesRetriever implements IFolderTextFilesNamesRetriever {
                 textFiles.add(dir.getAbsolutePath() + "/" + name);
             }
         }
+
+        logger.info("file " + textFiles + " dirs " + folders);
     }
 }
